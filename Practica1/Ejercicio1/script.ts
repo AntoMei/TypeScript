@@ -5,7 +5,7 @@ let contador: number = 0;
 for (let i = 0; i < 5; i++) {
   numeros.push(parseInt(prompt("Introduce un número:")));
   suma += numeros[i];
-  if (numeros[i] > 100) {
+  if (numeros[i] >= 100) {
     contador++;
   }
 }

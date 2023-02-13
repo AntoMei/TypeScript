@@ -1,10 +1,14 @@
-function calcularPrecio(precio: number): number {
-    const IVA = 0.21;
-    let precioConIva = precio * (1 + IVA);
-    return Number(precioConIva.toFixed(2));
-  }
-  
-  let precio: number = parseFloat(prompt("Introduce el precio del artículo:"));
-  let precioConIva = calcularPrecio(precio);
-  
-  alert("Precio con IVA incluido: " + precioConIva + " €");
+const num1Input = document.getElementById("num1") as HTMLInputElement;
+const num2Input = document.getElementById("num2") as HTMLInputElement;
+const sumButton = document.getElementById("sum-button") as HTMLButtonElement;
+
+sumButton.addEventListener("click", () => {
+  const num1 = parseFloat(num1Input.value);
+  const num2 = parseFloat(num2Input.value);
+  const sum = num1 + num2;
+  const sumInput = document.createElement("input");
+  sumInput.setAttribute("type", "text");
+  sumInput.value = sum.toString();
+  sumInput.setAttribute("disabled", "true");
+  document.body.appendChild(sumInput);
+});
